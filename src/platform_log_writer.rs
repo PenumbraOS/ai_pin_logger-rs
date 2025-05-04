@@ -47,11 +47,12 @@ impl PlatformLogWriter<'_> {
         PlatformLogWriter::new_with_priority(
             buf_id,
             match level {
+                // Ai Pin blocks anything below warn, so uplevel everything necessary
                 Level::Warn => LogPriority::WARN,
-                Level::Info => LogPriority::INFO,
-                Level::Debug => LogPriority::DEBUG,
+                Level::Info => LogPriority::WARN,
+                Level::Debug => LogPriority::WARN,
                 Level::Error => LogPriority::ERROR,
-                Level::Trace => LogPriority::VERBOSE,
+                Level::Trace => LogPriority::WARN,
             },
             tag,
         )

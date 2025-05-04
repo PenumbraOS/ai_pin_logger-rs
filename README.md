@@ -1,8 +1,8 @@
 ## Send Rust logs to Logcat
 
-[![Version](https://img.shields.io/crates/v/android_logger.svg)](https://crates.io/crates/android_logger)
-[![CI status](https://github.com/rust-mobile/android_logger-rs/actions/workflows/ci.yml/badge.svg)](https://github.com/rust-mobile/android_logger-rs/actions/workflows/ci.yml/)
+This is a special variant of [`android_logger`](https://github.com/rust-mobile/android_logger-rs) for the Humane Ai Pin that allows all of the Rust macros to be used while still preserving readable log output. The Ai Pin does not allow any logging below the warning level, so all levels below that are upleveled to `WARN`.
 
+---
 
 This library is a drop-in replacement for `env_logger`. Instead, it outputs messages to
 android's logcat.
@@ -111,8 +111,8 @@ set between those and Rust log facilities.
 
 Licensed under either of
 
- * Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
- * MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
+- Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+- MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
 
 at your option.
 

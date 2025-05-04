@@ -198,7 +198,8 @@ impl Log for AndroidLogger {
             (_, Some(format)) => format(&mut writer, record),
             (Some(_), _) => fmt::write(
                 &mut writer,
-                format_args!("{}: {}", module_path, *record.args()),
+                // Always write level since we're collapsing multiples
+                format_args!("{}: {}: {}", record.level(), module_path, *record.args()),
             ),
             _ => fmt::write(&mut writer, *record.args()),
         };
